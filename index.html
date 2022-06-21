@@ -17,7 +17,6 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
     <style>
-      /* navbar */
       .navbar-nav .nav-item {
         font-size: 13px;
         margin-left: 5px;
@@ -27,10 +26,9 @@
         font-size: 20px;
       }
 
-      /* fade google section */
       #fadeLetters>span {
         margin: 1px;
-    }
+      }
 
       #letterO.hidden,
       #letterO2.hidden {
@@ -51,17 +49,10 @@
         transition: opacity linear 5.5s 0s;
       }
 
-      /* end fade google section */
-
-      /* Text Box with icon */
-      /* Styles for wrapping the search box */
-
       .main {
         width: 50%;
         margin: 50px auto;
       }
-
-      /* Bootstrap 4 text input with search icon */
 
       .has-search .form-control {
         padding-left: 2.375rem;
@@ -88,43 +79,30 @@
         line-height: 2.675rem;
         text-align: center;
         pointer-events: none;
-        /* cursor: pointer; */
         color: cornflowerblue;
       }
 
-      /* Text Box with icon */
-
-      /* search box */
       input[type="text"] {
-        /* padding: 10px; */
-        /* width: 50%; */
         border-radius: 20px;
         height: 42px;
-        /* padding-left: 25px; */
       }
 
       input[type="text"]:hover {
         box-shadow: 1px 1px 1px 1px lightgray;
       }
-
-      /* lists */
-      
-
-      /* buttons */
+  
       .btn:hover {
         border: 1px solid grey;
         box-shadow: 1px 1px #888888;
       }
 
-      /* footer */     
       .footer {
         position: fixed;
         left: 0;
         bottom: 0;
         width: 100%;
         background-color: rgba(239, 239, 239, 0.45);
-        /* color: white; */
-        /* text-align: center; */
+  
       }
 
 
@@ -133,29 +111,7 @@
   <body>
     <nav class="navbar navbar-expand-md navbar-light">
       <div class="container-fluid">
-        <!-- <a class="navbar-brand abs" href="#">Navbar 1</a>
-        <button
-          class="navbar-toggler ms-auto"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#collapseNavbar"
-        > -->
-        <!-- <span class="navbar-toggler-icon"></span> -->
-        <!-- </button> -->
         <div class="navbar-collapse collapse" id="collapseNavbar">
-          <!-- <ul class="navbar-nav">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="//codeply.com">Codeply</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#myAlert" data-bs-toggle="collapse"
-                >Link</a
-              >
-            </li>
-          </ul> -->
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
               <a
@@ -321,15 +277,12 @@
       crossorigin="anonymous"
     ></script>
     <script>
-      const searchBtn = document.querySelector("button[name='searchBtn']");
       const fadeLetterO = document.querySelector("#letterO");
       const fadeLetterO2 = document.querySelector("#letterO2");
       const faderClass = "fadeout";
       let clickCounter = 0;
-
       document.addEventListener("click", () => {
-        clickCounter++;
-        
+        clickCounter++;        
         // fade single element div#fade
         if (fadeLetterO.classList.contains(faderClass)) {
           fadeLetterO.classList.remove("hidden");
@@ -338,7 +291,6 @@
           fadeLetterO.classList.remove("hidden");
           fadeLetterO.classList.add(faderClass);
         }
-
         // fade single element div#fade
         if (fadeLetterO2.classList.contains(faderClass)) {
           fadeLetterO2.classList.remove("hidden");
@@ -347,17 +299,10 @@
           fadeLetterO2.classList.remove("hidden");
           fadeLetterO2.classList.add(faderClass);
         }
-        
         console.log(`count is ${clickCounter}`);
         if (clickCounter > 2) {
-          // alert(`clicked ${clickCounter} times!`);
           window.location.href = "http://www.google.com";
         }
-      });
-
-      searchBtn.addEventListener("click", (e) => {
-        e.preventDefault();
-        console.log("You clicked 'Search'");
       });
     </script>
   </body>
